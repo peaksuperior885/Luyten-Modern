@@ -1,50 +1,41 @@
 Luyten
 ======
 **One of the Best**  
-Java Decompiler Gui for Procyon  
+Java Decompiler GUI for Procyon (Modernized Fork)  
 Apache License, Version 2.0
 
-[![Releases](https://img.shields.io/github/downloads/deathmarine/luyten/total.svg)](https://github.com/deathmarine/Luyten/releases)
+## Compilation & Build
 
-## Compilation
-
-*****
-
-We use maven to handle our dependencies.
-
-* Install [Maven 3](https://maven.apache.org/download.cgi)
-* Clone this repo and: `mvn clean install`
+We use **Gradle** to handle our dependencies and build process.
 
 ## Screenshot
 
-![Screen](https://i.imgur.com/phc59W6.png)
+![Screen](Screenshot.png)
 
-### Downloads
+- Ensure you have a Java Development Kit (JDK 17 or higher) installed.
+- Clone this repo and run:
+  - On Linux/macOS: `./gradlew build`
+  - On Windows: `gradlew.bat build`
 
-[Releases](https://github.com/deathmarine/Luyten/releases/latest)
-
-### Bugs/Suggestions
-
-[Issues](https://github.com/deathmarine/Luyten/issues)
+## Features in this Version
+- **Modern Look & Feel:** Powered by FlatLaf (v3.6.1) supporting clean dark/light themes and crisp UI scaling.
+- **Flexible Layouts:** Built using MigLayout (v5.3) for clean, responsive dialogs and settings panels.
+- **Scalable Icons:** High-quality SVG icon assets replacing old pixelated graphics.
+- **Customization:** Built-in settings for custom fonts and external icon packs.
 
 ## Powered by
 
-*****
-
 ### Procyon
+&copy; 2024 Mike Strobel  
+[https://github.com/mstrobel/procyon](https://github.com/mstrobel/procyon)  
 
-&copy; 2024 Mike Strobel
-[https://github.com/mstrobel/procyon](https://github.com/mstrobel/procyon)
-[Apache License](https://github.com/deathmarine/Luyten/blob/master/src/main/resources/licenses/Procyon.License.txt)
-
-### PicoCLI
-
-&copy; 2024 Remko Popma
-[https://picocli.info/](https://picocli.info/)
-[Apache License](https://github.com/deathmarine/Luyten/blob/master/src/main/resources/licenses/PicoCLI.License.txt)
+### FlatLaf & MigLayout
+UI frameworks by FormDev & MigLayout Team.
 
 ### RSyntaxTextArea
-
-&copy; 2024 Robert Futrell
+&copy; 2024 Robert Futrell  
 [https://bobbylight.github.io/RSyntaxTextArea/](https://bobbylight.github.io/RSyntaxTextArea/)
-[All Rights Reserved](https://github.com/deathmarine/Luyten/blob/master/src/main/resources/licenses/RSyntaxTextArea.License.txt)
+
+### PicoCLI
+&copy; 2024 Remko Popma  
+[https://picocli.info/](https://picocli.info/)

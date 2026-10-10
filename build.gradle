@@ -1,0 +1,77 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version "${shadowJarVersion}"
+}
+
+group = groupid
+version = ver
+description = desc
+
+base {
+    archivesName = 'luyten'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "com.apple:AppleJavaExtensions:${appleJavaExtVersion}"
+    implementation "info.picocli:picocli:${picocliVersion}"
+    implementation "org.bitbucket.mstrobel:procyon-core:${procyonVersion}"
+    implementation "org.bitbucket.mstrobel:procyon-expressions:${procyonVersion}"
+    implementation "org.bitbucket.mstrobel:procyon-reflection:${procyonVersion}"
+    implementation "org.bitbucket.mstrobel:procyon-compilertools:${procyonVersion}"
+    implementation "com.fifesoft:rsyntaxtextarea:${rsyntaxTextAreaVersion}"
+    implementation "com.formdev:flatlaf:${flatlafVersion}"
+    implementation "com.miglayout:miglayout-swing:${migver}"
+    implementation "org.tinylog:tinylog-api:${tinylogVersion}"
+    implementation "org.tinylog:tinylog-impl:${tinylogVersion}"
+    implementation "com.formdev:svgSalamander:${svgver}"
+}
+
+application {
+    mainClass = 'com.peak885.luyten.Luyten'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.jar {
+    archiveClassifier = 'lib'
+}
+
+tasks.named('shadowJar') {
+    archiveClassifier = ''
+
+    manifest {
+        attributes(
+                'Main-Class': application.mainClass.get(),
+                'Implementation-Version': project.version,
+                'X-Compile-Source-JDK': '1.8',
+                'X-Compile-Target-JDK': '1.8'
+        )
+    }
+
+    exclude 'module-info.class'
+    exclude 'META-INF/*.SF'
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    exclude 'META-INF/LICENSE*'
+    exclude 'META-INF/NOTICE*'
+}
+
+tasks.named('build') {
+    dependsOn tasks.named('shadowJar')
+}
+
+tasks.named('run') {
+    workingDir = projectDir
+}

@@ -3,7 +3,10 @@
 .project
 /bin
 /target
-/lib
+/libs
+/gradle
+/build
+/.gradle
 /resources
 
 # IntelliJ
