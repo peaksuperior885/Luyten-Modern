@@ -12,7 +12,7 @@ We use **Gradle** to handle our dependencies and build process.
 
 ![Screen](Screenshot.png)
 
-- Ensure you have a Java Development Kit (JDK 17 or higher) installed.
+- Ensure you have a Java Development Kit (JDK 8 or higher) installed.
 - Clone this repo and run:
   - On Linux/macOS: `./gradlew build`
   - On Windows: `gradlew.bat build`
