@@ -9,6 +9,8 @@ import java.io.File;
 public class LuytenOsx extends Luyten {
 
     public static void main(String[] args) {
+        JFontChooser fontConfig = new JFontChooser();
+        fontConfig.loadAndApplyConfig();
         // Add an adapter as the handler to a new instance of the application
         // class
         @SuppressWarnings("deprecation")

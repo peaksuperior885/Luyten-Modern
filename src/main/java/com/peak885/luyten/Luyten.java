@@ -36,7 +36,7 @@ public class Luyten implements Runnable {
     public static final String VERSION;
 
     static {
-        VERSION = VersionFetcher.getDisplayVersion();
+        VERSION = VersionFetcher.getVersion();
     }
 
     @CommandLine.Parameters(hidden = true)
@@ -57,6 +57,9 @@ public class Luyten implements Runnable {
         if (LuytenCLI.execute(input, output)) {
             return;
         }
+
+        JFontChooser fontConfig = new JFontChooser();
+        fontConfig.loadAndApplyConfig();
 
         splashScreen = new SplashScreen();
         splashScreen.show();

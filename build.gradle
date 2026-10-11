@@ -19,21 +19,23 @@ java {
 
 repositories {
     mavenCentral()
+    maven { url "https://peaksuperior885.github.io/peaks_maven/files/" }
 }
 
 dependencies {
     implementation "com.apple:AppleJavaExtensions:${appleJavaExtVersion}"
     implementation "info.picocli:picocli:${picocliVersion}"
-    implementation "org.bitbucket.mstrobel:procyon-core:${procyonVersion}"
-    implementation "org.bitbucket.mstrobel:procyon-expressions:${procyonVersion}"
-    implementation "org.bitbucket.mstrobel:procyon-reflection:${procyonVersion}"
-    implementation "org.bitbucket.mstrobel:procyon-compilertools:${procyonVersion}"
+    implementation "com.github.mstrobel:Procyon.Core:${procyonVersion}"
+    implementation "com.github.mstrobel:Procyon.Expressions:${procyonVersion}"
+    implementation "com.github.mstrobel:Procyon.Reflection:${procyonVersion}"
+    implementation "com.github.mstrobel:Procyon.CompilerTools:${procyonVersion}"
     implementation "com.fifesoft:rsyntaxtextarea:${rsyntaxTextAreaVersion}"
     implementation "com.formdev:flatlaf:${flatlafVersion}"
     implementation "com.miglayout:miglayout-swing:${migver}"
     implementation "org.tinylog:tinylog-api:${tinylogVersion}"
     implementation "org.tinylog:tinylog-impl:${tinylogVersion}"
     implementation "com.formdev:svgSalamander:${svgver}"
+    implementation "blue.endless:jankson:${janksonver}"
 }
 
 application {

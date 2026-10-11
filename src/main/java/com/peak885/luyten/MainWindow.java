@@ -280,17 +280,23 @@ public class MainWindow extends JFrame {
     }
 
     public void onLegalMenu() {
+        bar.setVisible(true);
+        bar.setIndeterminate(true);
+
         new Thread(() -> {
             try {
-                bar.setVisible(true);
-                bar.setIndeterminate(true);
                 String legalStr = getLegalStr();
-                getSelectedModel().showLegal(legalStr);
+
+                SwingUtilities.invokeLater(() ->
+                        getSelectedModel().showLegal(legalStr)
+                );
             } finally {
-                bar.setIndeterminate(false);
-                bar.setVisible(false);
+                SwingUtilities.invokeLater(() -> {
+                    bar.setIndeterminate(false);
+                    bar.setVisible(false);
+                });
             }
-        }).start();
+        }, "Luyten-Legal-Loader").start();
     }
 
     public void onListLoadedClasses() {
