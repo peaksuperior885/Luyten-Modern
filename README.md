@@ -10,7 +10,7 @@ We use **Gradle** to handle our dependencies and build process.
 
 ## Screenshot
 
-![Screen](Screenshot.png)
+![Screen](ScreenShot.png)
 
 - Ensure you have a Java Development Kit (JDK 8 or higher) installed.
 - Clone this repo and run:
